@@ -62,6 +62,5 @@ C:\Users\Alaeddin\documents\visual studio 2015\Projects\GoogleChart-MVC\GoogleCh
 C:\Users\Alaeddin\documents\visual studio 2015\Projects\GoogleChart-MVC\GoogleChart-MVC\bin\System.Web.Webpages.Razor.xml
 C:\Users\Alaeddin\documents\visual studio 2015\Projects\GoogleChart-MVC\GoogleChart-MVC\bin\System.Web.Helpers.xml
 C:\Users\Alaeddin\documents\visual studio 2015\Projects\GoogleChart-MVC\GoogleChart-MVC\bin\System.Web.Mvc.xml
-C:\Users\Alaeddin\documents\visual studio 2015\Projects\GoogleChart-MVC\GoogleChart-MVC\obj\Debug\GoogleChart-MVC.csprojResolveAssemblyReference.cache
 C:\Users\Alaeddin\documents\visual studio 2015\Projects\GoogleChart-MVC\GoogleChart-MVC\obj\Debug\GoogleChart-MVC.dll
 C:\Users\Alaeddin\documents\visual studio 2015\Projects\GoogleChart-MVC\GoogleChart-MVC\obj\Debug\GoogleChart-MVC.pdb

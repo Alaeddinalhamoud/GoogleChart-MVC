@@ -172,14 +172,17 @@
   <ItemGroup>
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\GoogleChartController.cs" />
+    <Compile Include="Controllers\BarChartController.cs" />
     <Compile Include="Controllers\PieChartController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\SaleAndExpense.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\SaleAndExpenseRepository.cs" />
     <Compile Include="Repository\StudentRepository.cs" />
+    <Compile Include="Service\ISaleAndExpense.cs" />
     <Compile Include="Service\IStudent.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -193,6 +196,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\PieChart\Index.cshtml" />
+    <Content Include="Views\BarChart\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

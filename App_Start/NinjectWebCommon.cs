@@ -64,6 +64,8 @@ namespace GoogleChart_MVC.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<IStudent>().To<StudentRepository>();
+            kernel.Bind<ISaleAndExpense>().To<SaleAndExpenseRepository>();
+         
         }        
     }
 }

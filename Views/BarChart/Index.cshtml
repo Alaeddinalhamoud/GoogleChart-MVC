@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<script src="~/scripts/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<div>
+    <h2>Google Chart - Bar Chart</h2>
+</div>
+
+<div id="chart_Bar_div" style="width:450px; height: 300px;"></div>
+
+
+<a href="https://developers.google.com/chart/">Google Charts</a>
+<script>
+   var chartData; // globar variable for hold chart data
+              //  google.load("visualization", "1", { packages: ["corechart"] });
+  google.charts.load('current', { 'packages': ['corechart'] });
+
+                // Here We will fill chartData
+  $(document).ready(function () {
+    
+       $.ajax({
+
+                        url: "GetBarChartSalesAndExpenses",
+                        
+                        dataType: "json",
+                        
+                        contentType: "application/json; chartset=utf-8",
+                        success: function (data) {
+
+                            chartData = data;
+                        },
+                        error: function () {
+                            alert("Error loading Post and Comment data! Please try again.");
+                        }
+                    }).done(function () {
+                        // after complete loading data
+                        google.setOnLoadCallback(drawChart);
+                        drawChart();
+                    });
+      });
+
+             function drawChart() {
+                    var data = google.visualization.arrayToDataTable(chartData);
+
+                    var options = {
+                        title: "Sales and Expenses per year",
+                        pointSize: 5
+                    };
+                    var Chart = new google.visualization.ColumnChart(document.getElementById('chart_Bar_div'));
+                    Chart.draw(data, options);
+                }
+</script>
+
+
+
+
+
+
+
