@@ -1,0 +1,85 @@
+﻿@model GoogleChart_MVC.Models.Student
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<script src="~/scripts/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<div>
+    <h2>Google Chart - Pie Chart</h2>
+</div>
+
+
+
+<div id="Piechart_ALL_div" style="width:450px; height: 300px;"></div>
+
+
+
+
+
+
+<script>
+   var chartData; // globar variable for hold chart data
+              //  google.load("visualization", "1", { packages: ["corechart"] });
+  google.charts.load('current', { 'packages': ['corechart'] });
+
+                // Here We will fill chartData
+  $(document).ready(function () {
+      
+         
+      
+       $.ajax({
+
+                        url: "GetStudentChart",
+                        
+                        dataType: "json",
+                        
+                        contentType: "application/json; chartset=utf-8",
+                        success: function (datapie) {
+
+                            chartDatapie = datapie;
+                        },
+                        error: function () {
+                            alert("Error loading data! Please try again.");
+                        }
+                    }).done(function () {
+                        // after complete loading data
+                        google.setOnLoadCallback(drawChartpie);
+                        drawChartpie();
+                    });
+      });
+  
+             function drawChartpie() {
+                    var datapie = google.visualization.arrayToDataTable(chartDatapie);
+
+                    var options = {
+                        title: "Students By Countries",
+                        pointSize: 5
+                    };
+                    var Chartpie = new google.visualization.PieChart(document.getElementById('Piechart_ALL_div'));
+                    Chartpie.draw(datapie, options);
+                }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="https://developers.google.com/chart/interactive/docs/gallery/piechart">Google Pie Chart</a> 
+
+
+
+
